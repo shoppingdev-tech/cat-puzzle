@@ -1,1 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy · Daily Jigsaw</title>
+<meta name="description" content="How Daily Jigsaw handles your information: what stays on your device, what our partners receive, and the choices you have.">
+<style>
+  :root {
+    --bg: #fbf6ee;
+    --bg-soft: #f4ebdd;
+    --card: #ffffff;
+    --ink: #3b2f2a;
+    --ink-soft: #6f5f55;
+    --line: #eadfcd;
+    --accent: #e0805a;
+    --accent-soft: #fbe3d6;
+    --sage: #7fa48a;
+    --sage-soft: #e3efe5;
+    --shadow: 0 1px 2px rgba(59, 47, 42, .06), 0 8px 24px rgba(59, 47, 42, .06);
+    --radius: 18px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1d1916;
+      --bg-soft: #26201c;
+      --card: #2a2420;
+      --ink: #f3e9df;
+      --ink-soft: #bfae9f;
+      --line: #3a312b;
+      --accent: #f09a74;
+      --accent-soft: #3d2a21;
+      --sage: #9cc3a7;
+      --sage-soft: #24302a;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+    }
+  }
 
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.65 ui-rounded, "SF Pro Rounded", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+
+  /* Header */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(160deg, var(--accent-soft), var(--bg) 70%);
+    border-bottom: 1px solid var(--line);
+    padding: 64px 20px 56px;
+    text-align: center;
+  }
+  .hero .paws {
+    position: absolute; inset: 0;
+    color: var(--accent);
+    opacity: .09;
+    pointer-events: none;
+  }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 14px; font-weight: 600;
+    color: var(--ink-soft);
+    box-shadow: var(--shadow);
+  }
+  .badge svg { width: 18px; height: 18px; color: var(--accent); }
+  h1 {
+    margin: 18px 0 8px;
+    font-size: clamp(34px, 6vw, 52px);
+    line-height: 1.1;
+    letter-spacing: -.02em;
+  }
+  .lede { margin: 0 auto; max-width: 560px; color: var(--ink-soft); font-size: 18px; }
+  .meta { margin-top: 18px; font-size: 14px; color: var(--ink-soft); }
+
+  /* Layout */
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 48px;
+  }
+  nav.toc {
+    position: sticky; top: 24px; align-self: start;
+    font-size: 15px;
+  }
+  .toc h2 {
+    font-size: 12px; text-transform: uppercase; letter-spacing: .1em;
+    color: var(--ink-soft); margin: 0 0 10px;
+  }
+  .toc ol { list-style: none; margin: 0; padding: 0; counter-reset: toc; }
+  .toc li { counter-increment: toc; }
+  .toc a {
+    display: flex; gap: 10px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+  .toc a::before { content: counter(toc, decimal-leading-zero); color: var(--accent); font-variant-numeric: tabular-nums; font-weight: 600; }
+  .toc a:hover { background: var(--bg-soft); color: var(--ink); }
+
+  main { min-width: 0; }
+
+  /* At a glance */
+  .glance {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 14px;
+    margin-bottom: 40px;
+  }
+  .tile {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 18px;
+    box-shadow: var(--shadow);
+  }
+  .tile .ico {
+    width: 40px; height: 40px;
+    display: grid; place-items: center;
+    border-radius: 12px;
+    background: var(--sage-soft); color: var(--sage);
+    margin-bottom: 10px;
+  }
+  .tile.warm .ico { background: var(--accent-soft); color: var(--accent); }
+  .tile .ico svg { width: 22px; height: 22px; }
+  .tile strong { display: block; font-size: 16px; margin-bottom: 2px; }
+  .tile span { font-size: 14.5px; color: var(--ink-soft); line-height: 1.5; }
+
+  /* Sections */
+  section {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 28px 30px;
+    margin-bottom: 18px;
+    box-shadow: var(--shadow);
+    scroll-margin-top: 20px;
+  }
+  section h2 {
+    display: flex; align-items: baseline; gap: 12px;
+    margin: 0 0 12px;
+    font-size: 23px; line-height: 1.3;
+  }
+  section h2 .n {
+    font-size: 14px; font-weight: 700;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  section h3 { font-size: 17px; margin: 22px 0 6px; }
+  section p { margin: 0 0 12px; }
+  section ul { margin: 0 0 12px; padding-left: 22px; }
+  section li { margin: 4px 0; }
+  section li::marker { color: var(--accent); }
+
+  table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 8px 0 14px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+  th { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-soft); background: var(--bg-soft); }
+  tr:last-child td { border-bottom: 0; }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; }
+
+  .note {
+    display: flex; gap: 12px;
+    background: var(--sage-soft);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 15.5px;
+    margin: 14px 0 4px;
+  }
+  .note svg { flex: none; width: 22px; height: 22px; color: var(--sage); margin-top: 2px; }
+
+  .contact {
+    text-align: center;
+    background: linear-gradient(160deg, var(--accent-soft), var(--card));
+  }
+  .btn {
+    display: inline-block;
+    margin-top: 8px;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    padding: 12px 22px;
+    border-radius: 999px;
+    text-decoration: none;
+  }
+  .btn:hover { filter: brightness(1.05); }
+
+  footer { text-align: center; color: var(--ink-soft); font-size: 14px; padding: 0 20px 48px; }
+
+  @media (max-width: 860px) {
+    .wrap { grid-template-columns: 1fr; gap: 24px; padding-top: 28px; }
+    nav.toc { position: static; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
+  }
+  @media (max-width: 520px) {
+    body { font-size: 16px; }
+    .hero { padding: 48px 16px 40px; }
+    .wrap { padding-left: 16px; padding-right: 16px; }
+    section { padding: 22px 18px; }
+  }
+  @media print {
+    .hero .paws, nav.toc { display: none; }
+    .wrap { display: block; }
+    section, .tile { box-shadow: none; break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="paw" viewBox="0 0 24 24"><path fill="currentColor" d="M12 13.5c-2.9 0-5.5 2.6-5.5 4.9 0 1.6 1.3 2.6 3 2.6 1 0 1.6-.4 2.5-.4s1.5.4 2.5.4c1.7 0 3-1 3-2.6 0-2.3-2.6-4.9-5.5-4.9ZM6.2 12.6c1.2-.3 1.8-1.8 1.4-3.3-.4-1.5-1.7-2.5-2.9-2.2-1.2.3-1.8 1.8-1.4 3.3.4 1.5 1.7 2.5 2.9 2.2Zm11.6 0c1.2.3 2.5-.7 2.9-2.2.4-1.5-.2-3-1.4-3.3-1.2-.3-2.5.7-2.9 2.2-.4 1.5.2 3 1.4 3.3ZM9.4 8.9c1.4 0 2.4-1.5 2.4-3.4S10.8 2 9.4 2 7 3.6 7 5.5s1 3.4 2.4 3.4Zm5.2 0c1.4 0 2.4-1.5 2.4-3.4S16 2 14.6 2s-2.4 1.6-2.4 3.5 1 3.4 2.4 3.4Z"/></symbol>
+  <symbol id="phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M8 2h8a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm3 17h2"/></symbol>
+  <symbol id="user-off" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 9a7 7 0 0 1 11.5-5.4M3 3l18 18"/></symbol>
+  <symbol id="image" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm3.5 7a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM21 15l-5-5L5 21"/></symbol>
+  <symbol id="megaphone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 11v2a1 1 0 0 0 1 1h3l6 4V6L7 10H4a1 1 0 0 0-1 1Zm14-2a4 4 0 0 1 0 6"/></symbol>
+  <symbol id="shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Zm-3-10 2 2 4-4"/></symbol>
+</svg>
+
+<header class="hero">
+  <svg class="paws" aria-hidden="true" viewBox="0 0 1200 320" preserveAspectRatio="xMidYMid slice">
+    <use href="#paw" x="60" y="40" width="70" height="70" transform="rotate(-18 95 75)"/>
+    <use href="#paw" x="190" y="190" width="54" height="54" transform="rotate(12 217 217)"/>
+    <use href="#paw" x="960" y="30" width="80" height="80" transform="rotate(20 1000 70)"/>
+    <use href="#paw" x="1080" y="200" width="58" height="58" transform="rotate(-10 1109 229)"/>
+    <use href="#paw" x="820" y="220" width="44" height="44" transform="rotate(30 842 242)"/>
+    <use href="#paw" x="330" y="30" width="40" height="40" transform="rotate(-30 350 50)"/>
+  </svg>
+  <span class="badge"><svg><use href="#paw"/></svg>Daily Jigsaw</span>
+  <h1>Privacy Policy</h1>
+  <p class="lede">A cozy puzzle game should feel safe. Here is exactly what happens to your information, in plain words.</p>
+  <p class="meta">Effective 31 October 2026 · Last updated 31 October 2026</p>
+</header>
+
+<div class="wrap">
+  <nav class="toc" aria-label="Contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#who">Who we are</a></li>
+      <li><a href="#device">What stays on your device</a></li>
+      <li><a href="#photos">Your photos</a></li>
+      <li><a href="#pictures">Daily pictures</a></li>
+      <li><a href="#ads">Advertising</a></li>
+      <li><a href="#purchases">In-app purchases</a></li>
+      <li><a href="#partners">Service providers</a></li>
+      <li><a href="#children">Children</a></li>
+      <li><a href="#rights">Your choices &amp; rights</a></li>
+      <li><a href="#security">Retention &amp; security</a></li>
+      <li><a href="#changes">Changes</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <div class="glance" aria-label="At a glance">
+      <div class="tile">
+        <div class="ico"><svg><use href="#user-off"/></svg></div>
+        <strong>No account</strong>
+        <span>No sign-up, no name, no email. Just play.</span>
+      </div>
+      <div class="tile">
+        <div class="ico"><svg><use href="#phone"/></svg></div>
+        <strong>Progress stays on your phone</strong>
+        <span>Levels, streaks, cats and settings are saved only on your device.</span>
+      </div>
+      <div class="tile">
+        <div class="ico"><svg><use href="#image"/></svg></div>
+        <strong>Photos never leave</strong>
+        <span>Photo puzzles are made on your device and are never uploaded.</span>
+      </div>
+      <div class="tile warm">
+        <div class="ico"><svg><use href="#megaphone"/></svg></div>
+        <strong>Ads by Google</strong>
+        <span>Ads may use your device's advertising ID, which you control.</span>
+      </div>
+    </div>
+
+    <section id="who">
+      <h2><span class="n">01</span>Who we are</h2>
+      <p>Daily Jigsaw (“the app”) is a jigsaw puzzle game for iOS and Android made by <strong>Schneider</strong> (“we”, “us”). This policy explains what information the app handles, why, and the choices you have. It applies only to the app, not to other websites or services that it links to.</p>
+      <p>We don't sell your personal information, and we don't run our own analytics or tracking.</p>
+    </section>
+
+    <section id="device">
+      <h2><span class="n">02</span>What stays on your device</h2>
+      <p>To remember your game, the app saves the following <strong>only in your device's storage</strong>. It is never sent to us.</p>
+      <ul>
+        <li>Puzzle progress, completed levels and chapters</li>
+        <li>Your daily streak and hint balance</li>
+        <li>The cats in your collection</li>
+        <li>Settings such as sound, haptics and language</li>
+        <li>Photo puzzles you create (see below)</li>
+      </ul>
+      <p>We don't collect your name, email address, phone number, contacts or precise location. The app does not ask for location access.</p>
+    </section>
+
+    <section id="photos">
+      <h2><span class="n">03</span>Your photos</h2>
+      <p>When you choose to make a puzzle from a photo, the app reads <strong>only the photo you pick</strong>. It cuts the photo into pieces on your device and keeps a copy there so you can come back to your puzzle.</p>
+      <p>Your photos are never uploaded to us or to anyone else, and the app does not browse the rest of your photo library.</p>
+    </section>
+
+    <section id="pictures">
+      <h2><span class="n">04</span>Daily pictures</h2>
+      <p>Each day has a new puzzle picture. The app downloads the pictures for the coming week from our image storage, hosted by <strong>Cloudflare</strong>, so you can play offline. Older pictures are removed from your device after about a week.</p>
+      <p>These downloads don't include anything about you or your game. Like any web request, your device's IP address and basic request details (such as time and app version) reach Cloudflare, which may keep them briefly in server logs for security and reliability.</p>
+    </section>
+
+    <section id="ads">
+      <h2><span class="n">05</span>Advertising</h2>
+      <p>The app is free and shows ads, for example a short video you can choose to watch for an extra hint. Ads are provided by <strong>Google AdMob</strong>.</p>
+      <p>To show and measure ads, and to prevent fraud, Google may collect:</p>
+      <ul>
+        <li>Your device's advertising identifier (IDFA on iOS, Advertising ID on Android)</li>
+        <li>IP address and the approximate location it implies</li>
+        <li>Device and app information, such as model, operating system and language</li>
+        <li>How you interact with ads, such as views and taps</li>
+      </ul>
+      <h3>Personalised ads and your consent</h3>
+      <p>On iOS, the app asks your permission before your advertising identifier can be used for tracking. If you say no, you will still see ads, but they won't be personalised using that identifier.</p>
+      <p>If you are in the European Economic Area, the United Kingdom or Switzerland, the app asks for your consent before personalised ads are shown. You can change your choice at any time from the app's settings.</p>
+      <p>Learn more in <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">how Google uses information from apps that use its services</a>.</p>
+    </section>
+
+    <section id="purchases">
+      <h2><span class="n">06</span>In-app purchases</h2>
+      <p>Optional purchases are handled entirely by the <strong>Apple App Store</strong> or <strong>Google Play</strong>. We never see or store your payment card or billing details.</p>
+      <p>We use <strong>RevenueCat</strong> to confirm purchases and restore them on a new device. RevenueCat receives an anonymous app user ID, your purchase receipt and basic device information. It does not receive your name or payment details.</p>
+    </section>
+
+    <section id="partners">
+      <h2><span class="n">07</span>Service providers</h2>
+      <p>These companies receive limited information to make the app work. Each one handles it under its own privacy policy.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Provider</th><th>What for</th><th>Privacy policy</th></tr></thead>
+          <tbody>
+            <tr><td>Google AdMob</td><td>Showing ads</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com</a></td></tr>
+            <tr><td>Cloudflare</td><td>Hosting daily pictures</td><td><a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">cloudflare.com</a></td></tr>
+            <tr><td>RevenueCat</td><td>Confirming purchases</td><td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com</a></td></tr>
+            <tr><td>Apple / Google</td><td>App stores and payments</td><td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com</a> · <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">google.com</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>We may also share information if the law requires it, or to protect the rights and safety of our users or others.</p>
+    </section>
+
+    <section id="children">
+      <h2><span class="n">08</span>Children</h2>
+      <p>The app is suitable for everyone but is not directed at children under 13 (or the minimum age in your country). We don't knowingly collect personal information from children. If you believe a child has provided personal information through the app, please contact us and we will help remove it.</p>
+    </section>
+
+    <section id="rights">
+      <h2><span class="n">09</span>Your choices &amp; rights</h2>
+      <ul>
+        <li><strong>Delete your game data:</strong> use <em>Settings → Reset</em> in the app, or uninstall the app. Purchases stay with your store account and can be restored.</li>
+        <li><strong>Limit ad tracking:</strong> on iOS, go to <em>Settings → Privacy &amp; Security → Tracking</em>. On Android, go to <em>Settings → Privacy → Ads</em> to reset or delete your Advertising ID.</li>
+        <li><strong>Change ad consent:</strong> use the privacy option in the app's settings.</li>
+      </ul>
+      <p>Depending on where you live (for example under the GDPR in Europe or the CCPA in California), you may have the right to access, correct or delete your personal information, or to object to how it is used. Because we don't keep your game data on our servers, most of it is already in your hands. For information held by our providers, contact us and we will help, or reach the provider directly.</p>
+      <div class="note"><svg><use href="#shield"/></svg><span>We don't sell or “share” personal information for cross-context behavioural advertising as defined by California law, except as described for Google AdMob above, which you can turn off using the controls on your device.</span></div>
+    </section>
+
+    <section id="security">
+      <h2><span class="n">10</span>Retention &amp; security</h2>
+      <p>Game data stays on your device until you reset the app or uninstall it. Downloaded daily pictures are removed after about a week. Our providers keep the information they receive for as long as their own policies describe.</p>
+      <p>All downloads use encrypted HTTPS connections. No method of storage or transfer is perfectly secure, but we keep what we handle to a minimum.</p>
+    </section>
+
+    <section id="changes">
+      <h2><span class="n">11</span>Changes to this policy</h2>
+      <p>We may update this policy when the app changes. We will post the new version on this page with a new “Last updated” date, and for important changes we will also let you know in the app.</p>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2 style="justify-content:center"><span class="n">12</span>Contact us</h2>
+      <p>Questions about privacy, or a request about your data? We'd love to hear from you.</p>
+      <a class="btn" href="mailto:schneider310399@gmail.com">schneider310399@gmail.com</a>
+    </section>
+  </main>
+</div>
+
+<footer>© 2026 Schneider · Made with care for puzzle lovers and cat people</footer>
+
+</body>
+</html>
